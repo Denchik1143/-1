@@ -1,0 +1,33 @@
+import math
+
+class Triangle:
+    def __init__(self, side_a, side_b, side_c):
+        self.side_a = side_a
+        self.side_b = side_b
+        self.side_c = side_c
+
+    def calculate_area_base_formula(self):
+        # Площа за базовою формулою S = 1/2 * a * b
+        return 0.5 * self.side_a * self.side_b
+
+    def calculate_area_heron_formula(self):
+        # Площа за формулою Герона
+        s = (self.side_a + self.side_b + self.side_c) / 2
+        return math.sqrt(s * (s - self.side_a) * (s - self.side_b) * (s - self.side_c))
+
+    def calculate_area_vector_method(self):
+        # Площа за векторним методом
+        # Припускається, що трикутник заданий векторами AB = (a1, a2), BC = (b1, b2)
+        a1, a2 = self.side_a
+        b1, b2 = self.side_b
+        cross_product = a1 * b2 - a2 * b1
+        return 0.5 * abs(cross_product)
+
+triangle = Triangle(3, 4, 5)  
+area_base_formula = triangle.calculate_area_base_formula()
+area_heron_formula = triangle.calculate_area_heron_formula()
+area_vector_method = triangle.calculate_area_vector_method()
+
+print(f"Площа за базовою формулою: {area_base_formula}")
+print(f"Площа за формулою Герона: {area_heron_formula}")
+print(f"Площа за векторним методом: {area_vector_method}")
