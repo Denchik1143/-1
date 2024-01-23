@@ -1,0 +1,9 @@
+def calculate_force(mass, acceleration):
+    force = mass * acceleration
+    return force
+
+mass = 10
+acceleration = 2
+resulting_force = calculate_force(mass, acceleration)
+
+print(f"Сила, що діє на тіло: {resulting_force} Ньютонів")
