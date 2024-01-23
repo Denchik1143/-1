@@ -1,0 +1,8 @@
+start = int(input("Введіть початкове число: "))
+end = int(input("Введіть кінцеве число (не включаючи його): "))
+
+numbers = list(range(start, end))
+sum_result = sum(numbers)
+
+print(f"Діапазон чисел: {numbers}")
+print(f"Сума чисел у діапазоні: {sum_result}")
